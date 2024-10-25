@@ -17,18 +17,18 @@ agent = ReActAgent.from_tools(
 )
 
 
-while (prompt := input("Enter a prompt (q to quit): ")) != "q":
-    retries = 0
-    while retries < 3:
-        try:
-            result = agent.query(prompt)
-            print("result", result)
-            break
-        except Exception as e:
-            retries += 1
-            print(f"exception occurered, retry #{retries} - {e}")
+# while (prompt := input("Enter a prompt (q to quit): ")) != "q":
+#     retries = 0
+#     while retries < 3:
+#         try:
+#             result = agent.query(prompt)
+#             print("result", result)
+#             break
+#         except Exception as e:
+#             retries += 1
+#             print(f"exception occurered, retry #{retries} - {e}")
 
-    if retries >= 3:
-        continue
+#     if retries >= 3:
+#         continue
 
     GitDocs._git_docs = None
