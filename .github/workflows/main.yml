@@ -30,4 +30,18 @@ jobs:
     - name: Run main.py
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        OLLAMA_HOST: ${{ secrets.OLLAMA_HOST }}
       run: python main.py
+
+    - name: Commit changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add .
+        git commit -m "Automated document generation"
+        git push
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      
+
+      
