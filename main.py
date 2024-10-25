@@ -16,7 +16,7 @@ agent = ReActAgent.from_tools(
     tools, llm=llm, verbose=True, context=context, max_iterations=30
 )
 
-
+print(f"Ollama Host : {base_url}")
 # while (prompt := input("Enter a prompt (q to quit): ")) != "q":
 retries = 0
 prompt="https://github.com/Sanika1409/REGEN"
